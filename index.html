@@ -46,7 +46,7 @@
       <div class="col">
         <h6 class="m-4">HOME PAGE</h6>
       </div>
-      <div class="col">
+      <div class="col justify-content-end">
         <input type="search" id="search" class="text-center border border-success" placeholder="Search.." />
         <label for="search">
           <button class="border rounded bg-success">
@@ -59,16 +59,20 @@
         </label>
       </div>
     </div>
-    <h1 class="my-4 ms-3 text-success display-3">Products</h1>
+    <div class="d-flex align-items-center">
+      <h1 class="my-4 mx-3 text-success display-3">Products</h1>
+      <span><a class="bg-success text-white p-1 rounded" style="text-decoration: none" href="./backoffice.html">+ NEW
+        </a></span>
+    </div>
     <div class="container">
-      <div id="prod-container" class="row">
+      <div id="prod-container" class="row row-cols-md-3 row-cols-lg-4 row-cols-sm-2">
         <!-- -->
       </div>
     </div>
   </main>
 </body>
-<footer>
-  <div class="bg-success text-white p-1">
+<footer class="position-relative bottom-0">
+  <div class="bg-success text-white p-1 position-sticky bottom-0 end-0">
     created by : Melquisedic Recalde
   </div>
 </footer>

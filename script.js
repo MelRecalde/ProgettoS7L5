@@ -16,44 +16,53 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     })
     .then(products => {
+        console.log(products)
         const product = document.getElementById("prod-container")
 
         products.forEach( e => {
 
             const col = document.createElement("div")
-            prod.classList.add("col")
+            col.classList.add("col-mb-4")
             const card = document.createElement("div")
             card.classList.add("card", "mb-4","shadow-sm")
 
+            /*const link = document.createElement("a")
+            link.href = new URLSearchParams(window.location.search).get(nameProd)*/
             const image = document.createElement("img")
             image.src = e.imageUrl
             image.alt = e.description
+            image.height = 300
+            image.classList.add("object-fit-cover")
+
 
             const cardBody = document.createElement("div")
-            cardBody.classList.add("card-body")
+            cardBody.classList.add("card-body","col")
 
-            const name = document.createElement("h5")
-            name.innerText = e.name
+            const nameProd = document.createElement("h1")
+            nameProd.innerText = e.name
 
             const description = document.createElement("p")
-            description.innerText = e.description
+            description.innerText = `description: ${e.description}`
 
             const brand = document.createElement("h6")
-            brand.innerText = e.brand
+            brand.innerText = `BRAND : ${e.brand}`
 
-            const price = document.createElement("p")
-            price.innerText = e.price
+            const price = document.createElement("h5")
+            price.classList.add("text-success")
+            price.innerText = `EUR ${e.price}`
 
-            cardBody.appendChild("name")
-            cardBody.appendChild("description")
-            cardBody.appendChild("brand")
-            cardBody.appendChild("price")
+            cardBody.appendChild(nameProd)
+            cardBody.appendChild(brand)
+            cardBody.appendChild(description)
+            
+            cardBody.appendChild(price)
+            //link.appendChild(image)
 
-            card.appendChild("image")
-            card.appendChild("cardBody")
+            card.appendChild(image)
+            card.appendChild(cardBody)
 
-            col.appendChild("card")
-            product.appendChild("col")
+            col.appendChild(card)
+            product.appendChild(col)
             
         });
     })
