@@ -38,14 +38,14 @@ window.addEventListener("DOMContentLoaded", function () {
             const cardBody = document.createElement("div")
             cardBody.classList.add("card-body","col")
 
-            const nameProd = document.createElement("h1")
+            const nameProd = document.createElement("h2")
             nameProd.innerText = e.name
 
             const description = document.createElement("p")
-            description.innerText = `description: ${e.description}`
+            description.innerText = `${e.description}`
 
             const brand = document.createElement("h6")
-            brand.innerText = `BRAND : ${e.brand}`
+            brand.innerText = `Brand : ${e.brand}`
 
             const price = document.createElement("h5")
             price.classList.add("text-success")
